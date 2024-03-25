@@ -45,13 +45,38 @@ def check(word, answer):
     letters = {}
     _word = word.lower()
     _answer = answer.lower()
+
+    # Create dictionaries to store occurrences of letters in guess and answer
+    guess_occurrences = {}
+    answer_occurrences = {}
+
+    # Count occurrences of each letter in the guess
+    for i, letter in enumerate(_word):
+        if letter in guess_occurrences:
+            guess_occurrences[letter].append(i)
+        else:
+            guess_occurrences[letter] = [i]
+
+    # Count occurrences of each letter in the answer
+    for i, letter in enumerate(_answer):
+        if letter in answer_occurrences:
+            answer_occurrences[letter].append(i)
+        else:
+            answer_occurrences[letter] = [i]
+
+    # Compare each letter in the guess with the corresponding letter in the answer
     for i, letter in enumerate(_word):
         if letter == _answer[i]:
-            letters[f"{letter}{i}"] = "GREEN"
-        elif letter in _answer:
-            letters[f"{letter}{i}"] = "YELLOW"
+            letters[f"{letter}{i}"] = "GREEN"  # Correct letter in correct position
+        elif letter in answer_occurrences:
+            # Check if the letter exists in the answer at a different position
+            if i in answer_occurrences[letter]:
+                letters[f"{letter}{i}"] = "YELLOW"  # Correct letter in wrong position
+            else:
+                letters[f"{letter}{i}"] = "RED"  # Incorrect letter
         else:
-            letters[f"{letter}{i}"] = "RED"
+            letters[f"{letter}{i}"] = "RED"  # Incorrect letter
+
     return letters
 
 
