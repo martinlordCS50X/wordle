@@ -1,11 +1,15 @@
 # wordle
-## Introduction
-This is an implementation of Wordle using Python and through the command line. On top of being a game you can play and learn from, instead of an app or website with ads, there are also some useful tools for if you want to make your own implementation of Wordle, or other apps, using my tools.
-## Function 'check'
-In helpers.py, I have made a function called 'check', that takes a word as input, assuming it is 5 letters, and returns a dictionary with each letter of the input word being linked with GREEN, YELLOW, or RED (grey if using NYT Wordle or the Wordle app). These three strings mean different things, that you will already know if you are a frequent user of Wordle.
-## Function 'print_hint'
-Also in helpers.py, there is a function named 'print_hint', which takes the output of 'check' as input, and prints a hint, with colored letters (GREEN, YELLOW, or RED), meaning different things. You will know what they mean if you are a frequent user of Wordle.
-## Function 'is_word'
-Finally, in helpers.py, I made a function called 'is_word'. It takes a word as input and returns True or False, depending on whether the input was a word.
-## Module 'nyt_api'
-Credit to sbplat for making code to work with the New York Times Wordle API, and get today's answer in readable JSON format. Visit https://github.com/sbplat/wordle for more details.
+## Introdution
+Wordle is a fun word puzzle game, owned by The New York Times. It is known for its daily puzzle solutions.
+This project aims to create a big set of tools related to wordle, such as the api, the base game, extra features,
+looking up solutions to different dates, and much more. Soon, this project will grow into a website, but, like most
+other projects, it will have humble beginnings. For now, enjoy my helpers.py module and an nyt.api module, for other
+programmers wishing to create wordle related projects, and the base game (accessible through main.py).
+## Dependencies
+You may use a virtual environment (I used venv to work on this) or something different to install these dependencies.
+First, clone this repository to your computer using
+git clone https://github.com/yourusername/wordle.git.
+Then, install the required packages from PIP using
+pip install requests colorama pyenchant.
+Finally, assuming you have python installed, 
+python main.py.
