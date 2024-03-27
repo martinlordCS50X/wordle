@@ -5,4 +5,5 @@ I created this project mostly for fun, but also to give other programmers a tool
 1. You may use a virtual environment (I used venv to work on this) or something different to install these dependencies
 2. First, clone this repository to your computer using git clone https://github.com/yourusername/wordle.git
 3. Then, install the required packages from PIP using pip install requests colorama pyenchant requests
-4. Finally, assuming you have python installed, python main.py.
+4. Next, go to either directory.
+5. Finally, run the wordle_game.py file or the main.py file.
