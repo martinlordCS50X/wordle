@@ -25,7 +25,7 @@ else:
     answer = get_wordle_answer(date)
 
 # Main game loop
-for _ in range(5):
+for _ in range(6):
     word = ""
     while len(word) != 5 or not is_word(word):
         word = input(Fore.RESET + "Enter a 5-letter word: ").lower()
